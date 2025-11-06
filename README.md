@@ -1,7 +1,6 @@
 # TaskFlow API
 
-TaskFlow is a RESTful task management API built with **Spring Boot**, **PostgreSQL**, and **Docker**.  
-It includes JWT-based user authentication, input validation, and Swagger UI documentation.
+TaskFlow is a RESTful task management API built with **Spring Boot**, **PostgreSQL**, and **Docker**. It includes JWT-based user authentication, input validation, and Swagger UI documentation.
 
 ---
 
@@ -29,6 +28,7 @@ It includes JWT-based user authentication, input validation, and Swagger UI docu
 ### Environment Variables
 Create a `.env` file in the project root with the following content:
 
+```
 POSTGRES_DB=taskflow_db
 POSTGRES_USER=taskflow_user
 POSTGRES_PASSWORD=taskflow_pass
@@ -36,11 +36,13 @@ POSTGRES_PORT=5432
 SPRING_DATASOURCE_URL=jdbc:postgresql://db:${POSTGRES_PORT}/${POSTGRES_DB}
 SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
 SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+```
 
 ### Application Properties
 
 In src/main/resources/application.properties:
 
+```
 spring.application.name=taskflow
 spring.datasource.url=${SPRING_DATASOURCE_URL}
 spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
@@ -50,6 +52,7 @@ spring.jpa.show-sql=true
 springdoc.api-docs.path=/api-docs
 springdoc.swagger-ui.path=/swagger-ui.html
 jwt.secret=${JWT_SECRET}
+```
 
 ## 🐳 Running with Docker
 
@@ -68,17 +71,23 @@ docker-compose down
 ## 🧩 Endpoints Overview
 
 ### Authentication
+
+```
 Method	Endpoint	            Description
 POST	/api/auth/register	    Register a new user
 POST	/api/auth/login	        Login and receive a JWT token
+```
 
 ### Tasks
+
+```
 Method	Endpoint	        Description
 GET	    /api/tasks	        Get all tasks
 GET	    /api/tasks/{id}	    Get task by ID
 POST	/api/tasks	        Create new task
 PUT	    /api/tasks/{id}	    Update task
 DELETE	/api/tasks/{id}	    Delete task
+```
 
 ## 🔐 Authentication
 
@@ -103,6 +112,8 @@ Ensure PostgreSQL is running and credentials match your .env or application.prop
 
 ## 🧑‍💻 Author
 
+```
 Andrew Herubin
 Plano, TX
 andrewherubin@outlook.com
+```
