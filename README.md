@@ -14,7 +14,7 @@ TaskFlow is a RESTful task management API built with **Spring Boot**, **PostgreS
 ---
 
 ## 🛠️ Tech Stack
-- **Java 17**
+- **Java 21**
 - **Spring Boot 3**
 - **Spring Security (JWT)**
 - **PostgreSQL**
